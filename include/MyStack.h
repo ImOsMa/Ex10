@@ -4,12 +4,12 @@
 
 template<class T>
 class MyStack {
-  private:
+ private:
   T* database;
   int top;
   int size;
 
-  public:
+ public:
   ~MyStack() {
     delete[] database;
     this->top = -1;

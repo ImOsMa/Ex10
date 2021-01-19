@@ -40,9 +40,9 @@ std::string infix2postfix(std::string expr) {
         changeExpr += opStack.pop();
         changeExpr += ' ';
       }
-      opStack.pop();  
+      opStack.pop();
      } else if (priority(opStack.get()) < priority(expr[i]) &&
-   !opStack.isEmpty()) {
+  !opStack.isEmpty()) {
       opStack.push(expr[i]);
     } else if (opStack.isEmpty()) {
       opStack.push(expr[i]);
