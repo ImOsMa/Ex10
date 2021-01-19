@@ -5,7 +5,6 @@
 #include "postfix.h"
 
 int priority(char element) {
-
   if (element == '(') {
     return 1;
   } else if (element == ')') {
@@ -36,15 +35,14 @@ std::string infix2postfix(std::string expr) {
         changeExpr += ' ';
       }
       continue;
-    }
-    else if (priority(expr[i]) == 2) {
+    } else if (priority(expr[i]) == 2) {
       while (priority(opStack.get()) != 1) {
         changeExpr += opStack.pop();
         changeExpr += ' ';
       }
       opStack.pop();  
-    } else if (priority(opStack.get()) < priority(expr[i]) &&
-      !opStack.isEmpty()) {
+     } else if (priority(opStack.get()) < priority(expr[i]) &&
+   !opStack.isEmpty()) {
       opStack.push(expr[i]);
     } else if (opStack.isEmpty()) {
       opStack.push(expr[i]);

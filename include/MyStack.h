@@ -4,21 +4,21 @@
 
 template<class T>
 class MyStack {
-private:
+  private:
   T* database;
   int top;
   int size;
 
-public:
+  public:
   ~MyStack() {
     delete[] database;
     this->top = -1;
     this->size = 0;
   }
 
-  MyStack(int length) : top(-1), 
-                      size(length), 
-                      database(new T[length]) {}
+  explicit MyStack(int length) : top(-1),
+                   size(length),
+                   database(new T[length]) {}
 
   MyStack(const MyStack& OtherStack) {
     database = new T[OtherStack.size];
@@ -32,10 +32,9 @@ public:
   bool isFull() const {
     if (size == top) {
       return true;
-    }
-    else {
+    } else {
       return false;
-    }
+      }
   }
 
   T get() const {
@@ -45,10 +44,9 @@ public:
   bool isEmpty() const {
     if (top < 0) {
       return true;
-    }
-    else {
+    } else {
       return false;
-    }
+      }
   }
 
   T pop() {
