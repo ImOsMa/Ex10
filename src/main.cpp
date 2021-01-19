@@ -1,8 +1,8 @@
 // Copyright 2021 Islam Osmanov
 #include <iostream>
+#include <string>
 #include "MyStack.h"
 #include "postfix.h"
-#include <string>
 
 
 int main() {
